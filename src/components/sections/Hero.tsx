@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <section className="relative w-full bg-navy hero-ledger-pattern text-on-navy py-14 md:py-20 border-b border-rule-navy overflow-hidden">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-12 lg:gap-8 items-stretch">
           {/* Kolom 1: Copywriting Utama (Desktop: 4 kolom) */}
           <div className="lg:col-span-4 flex flex-col justify-between">

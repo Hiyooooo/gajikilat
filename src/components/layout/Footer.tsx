@@ -4,7 +4,7 @@ import { Logo } from "@/components/ui/Logo";
 export function Footer() {
   return (
     <footer className="w-full bg-navy-950 text-on-navy-3 border-t border-rule-navy">
-      <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4 lg:gap-12">
           {/* Kolom 1: Brand & Tagline */}
           <div className="md:col-span-1 flex flex-col">

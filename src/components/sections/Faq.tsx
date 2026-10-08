@@ -13,7 +13,7 @@ export function Faq() {
 
   return (
     <section id="faq" className="w-full bg-canvas py-16 md:py-20 border-b border-rule">
-      <div className="mx-auto max-w-[880px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1040px] px-5 md:px-8">
         {/* Aturan Garis + Eyebrow Bernomor */}
         <div className="w-full border-t border-ink mb-3" />
         <div className="font-mono text-[12px] font-medium tracking-[0.08em] uppercase text-ink-3 mb-2">

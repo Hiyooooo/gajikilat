@@ -4,7 +4,7 @@ export function TrustStrip() {
   {/* ILUSTRATIF: ganti dengan data & klien asli. Pastikan nama tidak menyerupai perusahaan nyata */}
   return (
     <section className="w-full bg-canvas py-12 border-b border-rule">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         {/* Grid 4 Metrik Operasional */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-rule pb-10 border-b border-rule">
           {PROOF_NUMBERS.map((item, idx) => (

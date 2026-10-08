@@ -24,17 +24,17 @@ export function Security() {
 
   return (
     <section id="keamanan" className="w-full bg-navy text-on-navy py-16 md:py-20 border-b border-rule-navy">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         {/* Aturan Garis + Eyebrow Bernomor di atas Navy */}
         <div className="w-full border-t border-rule-navy mb-3" />
         <div className="font-mono text-[12px] font-medium tracking-[0.08em] uppercase text-emerald mb-2">
           04 / Keamanan & Kepatuhan
         </div>
 
-        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-on-navy leading-[1.2] max-w-2xl">
+        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-on-navy leading-[1.2] max-w-3xl">
           Data gaji dilindungi berlapis.
         </h2>
-        <p className="mt-3 text-[16px] text-on-navy-2 max-w-2xl leading-relaxed">
+        <p className="mt-3 text-[16px] text-on-navy-2 max-w-3xl leading-relaxed">
           Kerahasiaan nominal upah, nomor rekening, dan data perpajakan dijaga dengan standar teknis setara perbankan.
         </p>
 

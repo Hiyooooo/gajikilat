@@ -24,7 +24,7 @@ function ModulesHeader() {
         <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-ink leading-[1.2]">
           Lima modul, satu sumber data.
         </h2>
-        <p className="mt-2 text-[15px] md:text-[16px] text-ink-2 max-w-2xl leading-relaxed">
+        <p className="mt-2 text-[15px] md:text-[16px] text-ink-2 max-w-3xl leading-relaxed">
           Absensi dan Perizinan mengubah angka di Gaji secara langsung. Coba sendiri interaksi kartu di bawah.
         </p>
       </div>
@@ -51,7 +51,7 @@ export function Modules() {
 
   return (
     <section id="modul" className="w-full bg-canvas py-16 md:py-20 border-b border-rule">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <PayrollDemoProvider>
           <ModulesHeader />
 

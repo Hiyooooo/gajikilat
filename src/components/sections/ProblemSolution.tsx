@@ -27,7 +27,7 @@ export function ProblemSolution() {
 
   return (
     <section className="w-full bg-paper py-16 md:py-20 border-b border-rule">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         {/* Aturan Garis + Eyebrow Bernomor */}
         <div className="w-full border-t border-ink mb-3" />
         <div className="font-mono text-[12px] font-medium tracking-[0.08em] uppercase text-ink-3 mb-3">
@@ -35,10 +35,10 @@ export function ProblemSolution() {
         </div>
 
         {/* H2 Section */}
-        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-ink leading-[1.2] max-w-2xl">
+        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-ink leading-[1.2] max-w-3xl">
           Selisih kecil di payroll jadi komplain besar.
         </h2>
-        <p className="mt-3 text-[16px] text-ink-2 max-w-2xl leading-relaxed">
+        <p className="mt-3 text-[16px] text-ink-2 max-w-3xl leading-relaxed">
           Di pabrik dan ritel dengan ratusan karyawan, rekap spreadsheet manual selalu menghasilkan selisih lembur, kesalahan tarif TER, atau potongan izin yang terlewat.
         </p>
 

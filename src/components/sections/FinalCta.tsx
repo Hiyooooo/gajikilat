@@ -12,7 +12,7 @@ export function FinalCta() {
 
   return (
     <section className="w-full bg-navy text-on-navy py-16 md:py-24 border-b border-rule-navy relative overflow-hidden">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8 text-center flex flex-col items-center">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8 text-center flex flex-col items-center">
         <span className="font-mono text-[12px] font-medium tracking-[0.08em] uppercase text-emerald mb-3">
           Siap Bebas Dari Salah Hitung
         </span>

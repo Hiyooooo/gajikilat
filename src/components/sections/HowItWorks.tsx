@@ -22,17 +22,17 @@ export function HowItWorks() {
 
   return (
     <section id="cara-kerja" className="w-full bg-paper py-16 md:py-20 border-b border-rule">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         {/* Aturan Garis + Eyebrow Bernomor */}
         <div className="w-full border-t border-ink mb-3" />
         <div className="font-mono text-[12px] font-medium tracking-[0.08em] uppercase text-ink-3 mb-2">
           03 / Cara Kerja
         </div>
 
-        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-ink leading-[1.2] max-w-2xl">
+        <h2 className="font-serif text-[28px] md:text-[36px] font-semibold text-ink leading-[1.2] max-w-3xl">
           Dari data mentah ke transfer, dalam tiga langkah.
         </h2>
-        <p className="mt-3 text-[16px] text-ink-2 max-w-2xl leading-relaxed">
+        <p className="mt-3 text-[16px] text-ink-2 max-w-3xl leading-relaxed">
           Proses terstandarisasi untuk memangkas siklus tutup buku payroll dari hitungan hari menjadi hitungan menit.
         </p>
 
