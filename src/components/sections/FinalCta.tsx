@@ -36,7 +36,7 @@ export function FinalCta() {
             rel="noopener noreferrer"
             className="inline-flex h-12 items-center gap-2.5 rounded-[6px] border border-rule-navy bg-navy-2/60 px-6 text-[15px] font-semibold text-on-navy hover:bg-navy-2 transition-colors focus-visible:outline-2 focus-visible:outline-emerald"
           >
-            <WhatsAppIcon className="w-5 h-5 text-wa-green" />
+            <WhatsAppIcon className="w-5 h-5 shrink-0" />
             <span>Chat WhatsApp</span>
           </a>
         </div>

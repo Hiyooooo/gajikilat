@@ -6,7 +6,7 @@
 
 export const site = {
   name: "GajiKilat",
-  url: "https://gajikilat.id", // PLACEHOLDER: ganti dengan domain asli
+  url: "https://gajikilat.vercel.app/", // PLACEHOLDER: ganti dengan domain asli
   title: "GajiKilat - Sistem HRIS & Payroll Otomatis Bebas Salah Hitung",
   description:
     "Solusi penggajian cepat, akurat, dan patuh regulasi PPh 21 & BPJS untuk enterprise dan manufaktur.",

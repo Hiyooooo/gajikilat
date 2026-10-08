@@ -86,7 +86,7 @@ export function Modules() {
               rel="noopener noreferrer"
               className="inline-flex h-11 items-center gap-2 rounded-[6px] border border-rule bg-canvas px-4 text-[14px] font-medium text-ink hover:bg-band transition-colors focus-visible:outline-2 focus-visible:outline-emerald-700"
             >
-              <WhatsAppIcon className="w-4 h-4 text-emerald-700" />
+              <WhatsAppIcon className="w-4 h-4 shrink-0" />
               <span>Tanya lewat WhatsApp</span>
             </a>
           </div>
