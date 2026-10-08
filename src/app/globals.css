@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  /* Permukaan */
+  --paper: #FFFFFF;
+  --canvas: #F8FAFC;
+  --band: #F1F5F9;
+  --navy: #0F172A;
+  --navy-2: #1E293B;
+  --navy-950: #0A0F1D;
+
+  /* Garis */
+  --rule: #E2E8F0;
+  --rule-2: #CBD5E1;
+  --control: #64748B;
+  --rule-navy: rgba(255, 255, 255, 0.14);
+
+  /* Teks di atas terang */
+  --ink: #0F172A;
+  --ink-2: #334155;
+  --ink-3: #64748B;
+
+  /* Teks di atas navy */
+  --on-navy: #F8FAFC;
+  --on-navy-2: #CBD5E1;
+  --on-navy-3: #94A3B8;
+
+  /* Emerald */
+  --emerald: #10B981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-50: #ECFDF5;
+  --emerald-100: #D1FAE5;
+
+  /* Status */
+  --warn: #B45309;
+  --warn-bg: #FEF3C7;
+  --danger: #B91C1C;
+  --danger-bg: #FEE2E2;
+
+  /* Pihak ketiga */
+  --wa-green: #25D366;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-canvas: var(--canvas);
+  --color-band: var(--band);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-950: var(--navy-950);
+
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+  --color-control: var(--control);
+  --color-rule-navy: var(--rule-navy);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-2: var(--on-navy-2);
+  --color-on-navy-3: var(--on-navy-3);
+
+  --color-emerald: var(--emerald);
+  --color-emerald-600: var(--emerald-600);
+  --color-emerald-700: var(--emerald-700);
+  --color-emerald-50: var(--emerald-50);
+  --color-emerald-100: var(--emerald-100);
+
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+
+  --color-wa-green: var(--wa-green);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans), sans-serif;
+  color: var(--ink-2);
+  background-color: var(--paper);
+}
+
+/* Tabular nums untuk seluruh angka mono */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tekstur garis buku besar hero (satu-satunya linear-gradient yang diizinkan sesuai 02 §10 & 06 §1) */
+.hero-ledger-pattern {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04) 0 1px,
+    transparent 1px 32px
+  );
+}
+
+/* Titik leader untuk baris rincian slip/tabel */
+.dotted-leader {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--rule-2);
+  margin: 0 8px;
+  height: 14px;
+}
+
+/* Garis ganda di total */
+.double-line-top {
+  border-top: 3px double var(--ink);
+}
+
+.double-line-top-navy {
+  border-top: 3px double var(--on-navy);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
