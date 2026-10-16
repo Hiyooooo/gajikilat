@@ -126,6 +126,15 @@ export async function getSiteConfig(): Promise<SiteConfig> {
           }))
         : [];
 
+    const resolveUrl = (url: string | null | undefined): string => {
+      if (!url) return "";
+      if (url.startsWith("/")) return `${cleanUrl}${url}`;
+      if (url.includes("localhost:8000") && !cleanUrl.includes("localhost:8000")) {
+        return url.replace(/https?:\/\/[^/]+/, cleanUrl);
+      }
+      return url;
+    };
+
     return {
       site: {
         id: data.site?.id || DEFAULT_CONFIG.site.id,
@@ -133,9 +142,12 @@ export async function getSiteConfig(): Promise<SiteConfig> {
         domain: data.site?.domain || DEFAULT_CONFIG.site.domain,
       },
       branding: {
-        logo_url: data.branding?.logo_url || DEFAULT_CONFIG.branding.logo_url,
+        logo_url:
+          resolveUrl(data.branding?.logo_url) ||
+          DEFAULT_CONFIG.branding.logo_url,
         favicon_url:
-          data.branding?.favicon_url || DEFAULT_CONFIG.branding.favicon_url,
+          resolveUrl(data.branding?.favicon_url) ||
+          DEFAULT_CONFIG.branding.favicon_url,
         primary_color:
           data.branding?.primary_color || DEFAULT_CONFIG.branding.primary_color,
       },
@@ -169,7 +181,8 @@ export async function getSiteConfig(): Promise<SiteConfig> {
         keywords: Array.isArray(data.seo?.keywords)
           ? data.seo.keywords
           : DEFAULT_CONFIG.seo.keywords,
-        og_image_url: data.seo?.og_image_url || DEFAULT_CONFIG.seo.og_image_url,
+        og_image_url:
+          resolveUrl(data.seo?.og_image_url) || DEFAULT_CONFIG.seo.og_image_url,
       },
     };
   } catch {

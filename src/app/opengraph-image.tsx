@@ -1,10 +1,35 @@
 import { ImageResponse } from "next/og";
+import { getSiteConfig } from "@/lib/api";
 
 export const alt = "GajiKilat: slip gaji dengan PPh 21 dan BPJS dihitung otomatis";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const config = await getSiteConfig();
+  const ogImageUrl = config.seo.og_image_url;
+
+  if (ogImageUrl) {
+    try {
+      const res = await fetch(ogImageUrl);
+      if (res.ok) {
+        const buffer = await res.arrayBuffer();
+        const mime = res.headers.get("content-type") || "image/jpeg";
+        return new Response(buffer, {
+          headers: {
+            "Content-Type": mime,
+            "Cache-Control": "public, max-age=15, stale-while-revalidate=15",
+          },
+        });
+      }
+    } catch {
+      // Fallback ke ImageResponse di bawah jika gagal fetch
+    }
+  }
+
+  const headline = config.seo.meta_title || config.hero.headline || "Payroll akurat. Bebas salah hitung.";
+  const subheadline = config.seo.meta_description || config.hero.subheadline || "Sistem HRIS & penggajian otomatis untuk enterprise dan manufaktur.";
+
   return new ImageResponse(
     (
       <div
@@ -86,7 +111,7 @@ export default function Image() {
               letterSpacing: "-0.015em",
             }}
           >
-            Payroll akurat. Bebas salah hitung.
+            {headline}
           </div>
 
           <div
@@ -97,7 +122,7 @@ export default function Image() {
               marginBottom: "36px",
             }}
           >
-            Sistem HRIS & penggajian otomatis untuk enterprise dan manufaktur.
+            {subheadline}
           </div>
 
           {/* Tiga butir pilar */}
