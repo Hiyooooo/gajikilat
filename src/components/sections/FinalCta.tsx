@@ -2,13 +2,21 @@ import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
-export function FinalCta() {
+interface FinalCtaProps {
+  whatsappUrl?: string;
+  ctaText?: string;
+}
+
+export function FinalCta({ whatsappUrl, ctaText }: FinalCtaProps = {}) {
   const demoMailto = `mailto:${site.email}?subject=${encodeURIComponent(
     "Jadwalkan Demo GajiKilat - CTA Penutup"
   )}`;
-  const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-    "Halo GajiKilat, saya ingin menjadwalkan demo payroll satu siklus."
-  )}`;
+  const waUrl =
+    whatsappUrl ||
+    `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+      "Halo GajiKilat, saya ingin menjadwalkan demo payroll satu siklus."
+    )}`;
+  const primaryCta = ctaText || "Jadwalkan Demo";
 
   return (
     <section className="w-full bg-navy text-on-navy py-16 md:py-24 border-b border-rule-navy relative overflow-hidden">
@@ -27,7 +35,7 @@ export function FinalCta() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button variant="primary" href={demoMailto} isExternal className="h-12 px-6 text-[16px]">
-            Jadwalkan Demo
+            {primaryCta}
           </Button>
 
           <a

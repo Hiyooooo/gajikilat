@@ -41,13 +41,19 @@ function ModulesHeader() {
   );
 }
 
-export function Modules() {
+interface ModulesProps {
+  whatsappUrl?: string;
+}
+
+export function Modules({ whatsappUrl }: ModulesProps = {}) {
   const demoMailto = `mailto:${site.email}?subject=${encodeURIComponent(
     "Jadwalkan Demo GajiKilat - Fitur Modul"
   )}`;
-  const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-    "Halo GajiKilat, saya ingin bertanya tentang integrasi modul payroll."
-  )}`;
+  const waUrl =
+    whatsappUrl ||
+    `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+      "Halo GajiKilat, saya ingin bertanya tentang integrasi modul payroll."
+    )}`;
 
   return (
     <section id="modul" className="w-full bg-canvas py-16 md:py-20 border-b border-rule">

@@ -12,8 +12,10 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { generateJsonLd } from "@/lib/schema";
+import { getSiteConfig } from "@/lib/api";
 
-export default function Home() {
+export default async function Home() {
+  const config = await getSiteConfig();
   const jsonLd = generateJsonLd();
 
   return (
@@ -25,27 +27,45 @@ export default function Home() {
       />
 
       {/* Navigasi Utama */}
-      <Navbar />
+      <Navbar
+        logoUrl={config.branding.logo_url}
+        siteName={config.site.name}
+      />
 
       {/* Konten Halaman Tunggal */}
       <main id="konten-utama" className="flex flex-col min-h-screen">
-        <Hero />
+        <Hero
+          heroData={config.hero}
+          whatsappUrl={config.cta.whatsapp_url}
+        />
         <TrustStrip />
         <ProblemSolution />
-        <Modules />
+        <Modules whatsappUrl={config.cta.whatsapp_url} />
         <HowItWorks />
         <Security />
         <Testimonials />
         <Pricing />
         <Faq />
-        <FinalCta />
+        <FinalCta
+          whatsappUrl={config.cta.whatsapp_url}
+          ctaText={config.hero.cta_text}
+        />
       </main>
 
       {/* Footer Navigasi & Legal */}
-      <Footer />
+      <Footer
+        footerData={{
+          email: config.contact.email,
+          phone: config.contact.phone,
+          socialLinks: config.contact.social_links,
+          copyright: config.footer_text,
+          logoUrl: config.branding.logo_url,
+          name: config.site.name,
+        }}
+      />
 
       {/* Tombol WhatsApp Kapsul Melayang */}
-      <WhatsAppButton />
+      <WhatsAppButton whatsappUrl={config.cta.whatsapp_url} />
     </>
   );
 }

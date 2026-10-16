@@ -1,11 +1,16 @@
 import { site } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
-export function WhatsAppButton() {
-  const message = encodeURIComponent(
+interface WhatsAppButtonProps {
+  whatsappUrl?: string;
+}
+
+export function WhatsAppButton({ whatsappUrl }: WhatsAppButtonProps = {}) {
+  const defaultMessage = encodeURIComponent(
     "Halo GajiKilat, saya ingin menjadwalkan demo payroll."
   );
-  const href = `https://wa.me/${site.whatsapp}?text=${message}`;
+  const href =
+    whatsappUrl || `https://wa.me/${site.whatsapp}?text=${defaultMessage}`;
 
   return (
     <aside

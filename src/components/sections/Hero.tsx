@@ -4,10 +4,26 @@ import { Button } from "@/components/ui/Button";
 import { SavingsCalculator } from "@/components/hero/SavingsCalculator";
 import { SecurityPanel } from "@/components/hero/SecurityPanel";
 
-export function Hero() {
+interface HeroProps {
+  heroData?: {
+    headline?: string;
+    subheadline?: string;
+    cta_text?: string;
+  };
+  whatsappUrl?: string;
+}
+
+export function Hero({ heroData, whatsappUrl }: HeroProps = {}) {
+  const headline = heroData?.headline || "Payroll akurat. Bebas salah hitung.";
+  const subheadline =
+    heroData?.subheadline ||
+    "PPh 21 dan BPJS dihitung otomatis dari data absensi dan perizinan, lalu diperiksa sebelum transfer. Tidak ada rekap lembur yang diketik ulang.";
+  const ctaText = heroData?.cta_text || "Jadwalkan Demo";
+
   const demoMailto = `mailto:${site.email}?subject=${encodeURIComponent(
     "Jadwalkan Demo GajiKilat"
   )}`;
+  const primaryHref = whatsappUrl || demoMailto;
 
   return (
     <section className="relative w-full bg-navy hero-ledger-pattern text-on-navy py-14 md:py-20 border-b border-rule-navy overflow-hidden">
@@ -25,18 +41,18 @@ export function Hero() {
 
               {/* H1 Utama */}
               <h1 className="font-serif text-[34px] md:text-[44px] font-semibold text-on-navy tracking-[-0.015em] leading-[1.12]">
-                Payroll akurat. Bebas salah hitung.
+                {headline}
               </h1>
 
               {/* Sub-headline Deskriptif */}
               <p className="mt-4 text-[16px] text-on-navy-2 leading-[1.6]">
-                PPh 21 dan BPJS dihitung otomatis dari data absensi dan perizinan, lalu diperiksa sebelum transfer. Tidak ada rekap lembur yang diketik ulang.
+                {subheadline}
               </p>
 
               {/* CTA Utama & Sekunder */}
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Button variant="primary" href={demoMailto} isExternal>
-                  Jadwalkan Demo
+                <Button variant="primary" href={primaryHref} isExternal>
+                  {ctaText}
                 </Button>
                 <Button variant="outline-navy" href="#modul">
                   Lihat Alur Payroll

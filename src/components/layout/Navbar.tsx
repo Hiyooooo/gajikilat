@@ -6,7 +6,12 @@ import { site } from "@/lib/site";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
-export function Navbar() {
+interface NavbarProps {
+  logoUrl?: string;
+  siteName?: string;
+}
+
+export function Navbar({ logoUrl, siteName }: NavbarProps = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -35,7 +40,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 h-16 w-full border-b border-rule bg-paper">
       <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-5 md:px-8">
         {/* Logo */}
-        <Logo />
+        <Logo logoUrl={logoUrl} siteName={siteName} />
 
         {/* Desktop Navigation */}
         <nav aria-label="Utama" className="hidden md:flex items-center gap-7">
